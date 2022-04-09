@@ -12,10 +12,10 @@ const questions = [
     message: 'Enter your GitHub Username (Required)',
     validate: githubInput => {
         if (githubInput) {
-        return true;
+            return true;
         } else {
-        console.log('Please enter your GitHub username!'); 
-        return false;  
+            console.log('Please enter your GitHub username!'); 
+            return false;  
         }
     } 
 },
@@ -23,12 +23,12 @@ const questions = [
     type: 'input',
     name: 'email',
     message: 'What is your email address? (Required)',
-    validate: githubInput => {
-        if (githubInput) {
-        return true;
+    validate: emailInput => {
+        if (emailInput) {
+            return true;
         } else {
-        console.log('Please enter your GitHub username!'); 
-        return false;  
+            console.log('Please enter your GitHub username!'); 
+            return false;  
         }
     } 
 },
@@ -38,10 +38,10 @@ const questions = [
     message: 'What is the title of your project (Required)',
     validate: titleInput => {
         if (titleInput) {
-        return true;
+            return true;
         } else {
-        console.log('Please enter the title of your project!');
-        return false;
+            console.log('Please enter the title of your project!');
+            return false;
         }
     }
 },
@@ -51,10 +51,10 @@ const questions = [
     message: 'Provide a description of the project (Required)',
     validate: descriptionInput => {
         if (descriptionInput) {
-        return true;
+            return true;
         } else {
-        console.log('You need to enter a project description!');
-        return false;
+            console.log('You need to enter a project description!');
+            return false;
         }
     }
 },
@@ -64,22 +64,22 @@ const questions = [
     message: 'Would you like to add "Table of Contents" section?',
     default: true
 },
-{
-    type: 'input',
-    name: 'tableOfContents',
-    message: 'Provide "Table of Contents" information:',
-    when: ({ confirmTableOfContents }) => confirmTableOfContents
-},
+// {
+//     type: 'input',
+//     name: 'tableOfContents',
+//     message: 'Provide "Table of Contents" information:',
+//     when: ({ confirmTableOfContents }) => confirmTableOfContents
+// },
 {
     type: 'input',
     name: 'installation',
     message: 'What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running. (Required)',
     validate: installationInput => {
         if (installationInput) {
-        return true;
+            return true;
         } else {
-        console.log('You need to enter steps to  install your project!');
-        return false;
+            console.log('You need to enter steps to  install your project!');
+            return false;
         }
     }
 },
@@ -89,10 +89,10 @@ const questions = [
     message: 'Provide instructions and examples for use. Include screenshots as needed. (Required)',
     validate: usageInput => {
         if (usageInput) {
-        return true;
+            return true;
         } else {
-        console.log('Provide instructions and examples for use!');
-        return false;
+            console.log('Provide instructions and examples for use!');
+            return false;
         }
     }
 },
@@ -102,10 +102,10 @@ const questions = [
     message: 'List your collaborators, if any, with links to their GitHub profiles. If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section. If you followed tutorials, include links to those here as well. (Required)',
     validate: creditsInput => {
         if (creditsInput) {
-        return true;
+            return true;
         } else {
-        console.log('Provide contributor information and citations!');
-        return false;
+            console.log('Provide contributor information and citations!');
+            return false;
         }
     }
 },
@@ -115,10 +115,10 @@ const questions = [
     message: 'Add guidelines for how others can contribute to your project. (Required)',
     validate: contributingInput => {
         if (contributingInput) {
-        return true;
+            return true;
         } else {
-        console.log('Provide guidelines to contribute your project!');
-        return false;
+            console.log('Provide guidelines to contribute your project!');
+            return false;
         }
     }
 },
@@ -131,10 +131,30 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(data) {
+    fs.writeFile('./dist/README.md', data, err => {
+        // if error occurs
+        if (err) {
+            console.log(err);
+            return;
+        // if no error, when README successfully created
+        } else {
+            console.log('The README file is created, Success!')
+        }
+    })
+};
 
-// TODO: Create a function to initialize app
-function init() {}
+// a function to initialize app
+function init() {
+    inquirer.prompt(questions)
+    .then(answers => {
+        return generateMarkdown(answers)
+        // console.log(generateMarkdown(answers));
+    })
+    .then(data => {
+        return writeToFile(data);
+    });
+}
 
 // Function call to initialize app
 init();
