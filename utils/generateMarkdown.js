@@ -52,14 +52,14 @@ function generateMarkdown(data) {
   ## Usage
   ${data.usage}
 
-  ## License
-  ${renderLicenseSection(data.license)}
+  ## Credits
+  ${data.credits}
   
   ## Contributing
   ${data.contributing}
 
-  ## Tests
-  ${data.tests}
+  ## License
+  ${renderLicenseSection(data.license)}
 
   ## Questions
   If there is any question related to this project, please contact me at ${data.email}. You may see my other projects at https://github.com/${data.github}.

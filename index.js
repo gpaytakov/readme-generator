@@ -64,12 +64,6 @@ const questions = [
     message: 'Would you like to add "Table of Contents" section?',
     default: true
 },
-// {
-//     type: 'input',
-//     name: 'tableOfContents',
-//     message: 'Provide "Table of Contents" information:',
-//     when: ({ confirmTableOfContents }) => confirmTableOfContents
-// },
 {
     type: 'input',
     name: 'installation',

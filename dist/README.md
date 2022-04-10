@@ -1,7 +1,7 @@
-# Run Buddy
+# PokeHunt
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   ## Description
-  A website that offers fitness training services.
+  PokeHunt is a database search that takes in the name of a Pokemon from the user and returns basic info such as the Pokemon image, type, and stats.
 
   ## Table of Contents (Optional)
   * [Installation](#installation)
@@ -12,23 +12,23 @@
   * [Questions](#questions)
   
   ## Installation
-  Visit published site at https://gpaytakov.github.io/run-buddy/ 
+  Deployed site: https://jrj-sys.github.io/PokeHunt/ 
 
   ## Usage
-  Navigation panel at the top is responsive. You may fill the form and one of the trainers from Run Buddy Inc. will contact you.
+  https://github.com/jrj-sys/PokeHunt/blob/develop/assets/images/Screen%20Shot%202022-03-24%20at%204.15.47%20PM.png
+
+  ## Credits
+  Cassandra Hardin: (https://wwww.github.com/CassDoes), Guvanchmyrat Paytakov: (https://wwww.github.com/gpaytakov), Jamel James: (https://wwww.github.com/jrj-sys), Stefan Oddsson: (https://wwww.github.com/StebbiO)
+  
+  ## Contributing
+  Fork from GitHub URL: https://github.com/jrj-sys/PokeHunt, improve and ask pull request. Our team will review and take action accordingly.
 
   ## License
   
     [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
     [Link to MIT license:](https://opensource.org/licenses/MIT)
     
-  
-  ## Contributing
-  You may help to improve this project by creating fork and creating pull request on github.
-
-  ## Tests
-  undefined
 
   ## Questions
-  If there is any question related to this project, please contact me at gpaytakov@gmail.com. You may see my other projects at https://github.com/gpaytakov.
+  If there is any question related to this project, please contact me at sample@sample.com. You may see my other projects at https://github.com/gpaytakov.
 
